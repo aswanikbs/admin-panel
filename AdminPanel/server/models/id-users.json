@@ -1,0 +1,57 @@
+{
+  "name": "IdUsers",
+  "base": "User",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": false,
+      "length": 36
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "length": 50
+    },
+    "password": {
+      "type": "string",
+      "required": true,
+      "length": 15
+    },
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "length": 20
+    },
+    "lastName": {
+      "type": "string",
+      "required": false,
+      "length": 20
+    },
+    "userroleid": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
